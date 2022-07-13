@@ -30,4 +30,12 @@ class QueryProcessorTest {
 		}
 	}
 
+	@Test
+	void TestPlus(){
+		String act = queryProcessor.process("what is 3 plus 3");
+		if(!act.contains("6")){
+			fail("NO");
+		}
+	}
+
 }
