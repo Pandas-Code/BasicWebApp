@@ -32,13 +32,16 @@ public class QueryProcessor {
         else if (query.contains("largest")){
             String[] a = query.split(", ");
             List<Integer> b = new ArrayList<>();
-            b.add(Integer.valueOf(a[0].split(": ")[1]));
+            b.add(Integer.valueOf(a[0].split("largest: ")[1]));
             String[] c =Arrays.copyOfRange(a, 1, a.length);
             for (String s : c){
             b.add(Integer.valueOf(s));
             }
             Collections.sort(b);
             return String.valueOf(b.get(b.size()-1));
+        }
+        else if (query.contains("James Bond")){
+            return "Sean Connery";
         }
         else { // TODO extend the programm here
             return "";
